@@ -1,4 +1,6 @@
 <script>
+    import FormTitle from "./FormTitle.svelte";
+
     let bannedMedicine = {
         medicineName: "",
         brandName: "",
@@ -20,7 +22,7 @@
 
 <div class="form-container">
     <form on:submit|preventDefault={handleSubmit}>
-        <h2 class="form-title">Banned Medicine Report</h2>
+        <FormTitle title="Banned medicine" />
 
         <div class="form-row">
             <div class="form-group">
@@ -116,6 +118,7 @@
             <textarea
                 id="activeIngredients"
                 bind:value={bannedMedicine.activeIngredients}
+                rows="5"
                 required
                 placeholder="List all active pharmaceutical ingredients"
             ></textarea>
@@ -128,6 +131,7 @@
             <textarea
                 id="bannedCountries"
                 bind:value={bannedMedicine.bannedCountries}
+                rows="5"
                 required
                 placeholder="List countries where this medicine is banned"
             ></textarea>
@@ -140,6 +144,7 @@
             <textarea
                 id="banReason"
                 bind:value={bannedMedicine.banReason}
+                rows="5"
                 required
                 placeholder="Describe safety concerns, efficacy issues, side effects, etc."
             ></textarea>
@@ -152,6 +157,7 @@
             <textarea
                 id="alternativeMedicine"
                 bind:value={bannedMedicine.alternativeMedicine}
+                rows="5"
                 placeholder="List approved alternatives in countries where this medicine is banned"
             ></textarea>
         </div>

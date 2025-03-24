@@ -1,11 +1,17 @@
 /* root variables */
 :root{
+    /* colors */
     --primary-color: #4A90E2;
     --secondary-color: #2ECC71;
-    --background-color: #F2F2F2;
+    --background-color: #FFFFFF;
     --text-color: #333333;
+    --light-text-color: #676767;
+    --border-color: #dcdcdc;
     --hover-color: #0078D4;
     --cta-color: #FF8C00;
+
+    /* border-radius */
+    --border-radius: 7px
 }
 
 /* reset styles */
@@ -20,18 +26,174 @@ body{
     font-family: "Lato", sans-serif;
 }
 
+/* general styles */
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* layout styles */
+.slot-container {
+    margin: 0 auto 1rem;
+    max-width: 1000px;
+}
+
+/* header styles */
+.header {
+    padding: 2rem 3rem;
+    font-style: italic;
+}
+
+.header a {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.header span {
+    margin-left: 1rem;
+    color: var(--light-text-color);
+}
+
+/* hero styles */
+.hero, .contribute, .browse {
+    margin-top: 5rem;
+}
+
+.hero h2 {
+    margin-bottom: 1.75rem;
+    font-size: 2.75rem;
+}
+
+.hero li {
+    margin: 1rem 0;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--light-text-color);
+}
+
+/* contribute styles */
+.contribute span {
+    font-size: 1.1rem;
+    color: var(--light-text-color);
+}
+
+.contribute button {
+    margin: 0 1rem;
+    font-size: 1.5rem;
+}
+
+/* browse styles */
+.browse h2 {
+    margin-bottom: 1.75rem;
+    font-size: 2rem;
+}
+
+.browse input {
+    margin-bottom: 1.75rem;
+}
+
+.browse .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* card styles */
+.card {
+    margin-bottom: 1rem;
+    padding: 2.25rem 1.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    flex: 1;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.card .card-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card .key-value {
+    margin-bottom: .75rem;
+    display: flex;
+    align-items: center;
+}
+
+.card .key {
+    margin-right: .5rem;
+    font-size: .9rem;
+    color: var(--light-text-color);
+}
+
+.card .value {
+    font-weight: bold;
+}
+
+.card .tag {
+    padding: .5rem;
+    color: var(--cta-color);
+    background-color: var(--background-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+/* form select styles */
+.form-select {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 2rem 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.form-select .select {
+    padding: 1rem;
+    text-align: center;
+    border: 2px solid var(--text-color);
+    border-radius: var(--border-radius);
+    flex: 1;
+    cursor: pointer;
+}
+
+.form-select .active {
+    border: 2px solid var(--secondary-color);
+}
+
 /* form styles */
 form {
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
+    position: relative;
+}
+
+/* form title styles */
+.title-row {
+    margin-bottom: 2.5rem;
+    position: relative;
 }
 
 .form-title {
-    color: #2d3748;
-    margin-bottom: 2rem;
+    padding: .5rem;
     font-size: 1.5rem;
     font-weight: 600;
+    color: var(--secondary-color);
+    background-color: var(--background-color);
+    position: absolute;
+    left: 0;
+    top: -1.35rem;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
 }
 
 .form-row {
@@ -45,11 +207,11 @@ form {
 }
 
 label {
-    display: block;
     margin-left: 0.5rem;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
     color: #4a5568;
+    display: block;
 }
 
 input,
@@ -73,10 +235,15 @@ textarea:focus {
 }
 
 .button-group {
-    margin-top: 2rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--background-color);
     display: flex;
     gap: 1rem;
     justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 button {
@@ -109,4 +276,11 @@ button[type="reset"]:hover {
 .required {
     color: #e53e3e;
     margin-left: 0.25rem;
+}
+
+.helper-text {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
 }

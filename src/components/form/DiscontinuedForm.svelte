@@ -1,4 +1,6 @@
 <script>
+    import FormTitle from "./FormTitle.svelte";
+
     let discontinuedMedicine = {
         medicineName: "",
         brandName: "",
@@ -20,7 +22,7 @@
 
 <div class="form-container">
     <form on:submit|preventDefault={handleSubmit}>
-        <h2 class="form-title">Discontinued Medicine Report</h2>
+        <FormTitle title="Discontinued medicine" />
 
         <div class="form-container">
             <div class="form-row">
@@ -145,13 +147,14 @@
                 <label for="distributionAreas"
                     >Distribution Areas <span class="required">*</span></label
                 >
-                <input
+                <textarea
                     type="text"
                     id="distributionAreas"
                     bind:value={discontinuedMedicine.distributionAreas}
+                    rows="5"
                     required
                     placeholder="Enter countries/regions"
-                />
+                ></textarea>
             </div>
 
             <div class="form-group">

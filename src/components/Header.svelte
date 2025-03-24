@@ -1,20 +1,9 @@
 <script>
-    const title = 'Medicine Tracker';
+    const title = 'Pharma Insights';
+    const titleHelper = 'educating and protecting through verified medicine data';
 </script>
 
 <div class="header">
-    <h1>{title}</h1>
+    <a href="/">{title}</a>
+    <span>{titleHelper}</span>
 </div>
-
-<style>
-    .header {
-        padding: 1rem 2rem;
-        background-color: var(--background-color);
-    }
-
-    .header h1 {
-        font-size: 2rem;
-        font-weight: 600;
-        color: var(--primary-color);
-    }
-</style>
